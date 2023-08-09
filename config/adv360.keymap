@@ -17,39 +17,17 @@
           flavor = "tap-preferred";
           bindings = <&kp>, <&kp>;
       };
-
-      hm_l: homerow_mods_left {
-        compatible = "zmk,behavior-hold-tap";
-        label = "HOMEROW_MODS_LEFT";
-        #binding-cells = <2>;
-        tapping-term-ms = <200>;
-        quick_tap_ms = <175>;
-        flavor = "balanced";
-        bindings = <&kp>, <&kp>;
-        hold-trigger-key-positions = <KEYS_RIGHT THUMBS>;
-      };
-
-      hm_r: homerow_mods_right {
-        compatible = "zmk,behavior-hold-tap";
-        label = "HOMEROW_MODS_RIGHT";
-        #binding-cells = <2>;
-        tapping-term-ms = <200>;
-        quick_tap_ms = <175>;
-        flavor = "balanced";
-        bindings = <&kp>, <&kp>;
-        hold-trigger-key-positions = <KEYS_LEFT THUMBS>;
-      };
     };
 
     // Home row mods
-    #define _F_SFT &hm_l LSHFT F  // Shift on index fingers
-    #define _J_SFT &hm_r RSHFT J
-    #define _D_CMD &hm_l LGUI D   // Command on middle fingers
-    #define _K_CMD &hm_r RGUI K
-    #define _S_ALT &hm_l LALT S  // Control on index down
-    #define _L_ALT &hm_r RALT L
-    #define _A_CTL &hm_l LCTRL A   // Option on ring finger
-    #define _SEMI_CTL &hm_r RCTRL SEMI
+    #define _F_SFT &hm LSHFT F  // Shift on index fingers
+    #define _J_SFT &hm RSHFT J
+    #define _D_CMD &hm LGUI D   // Command on middle fingers
+    #define _K_CMD &hm RGUI K
+    #define _S_ALT &hm LALT S  // Control on index down
+    #define _L_ALT &hm RALT L
+    #define _A_CTL &hm LCTRL A   // Option on ring finger
+    #define _SEMI_CTL &hm RCTRL SEMI
 
   keymap {
     compatible = "zmk,keymap";
