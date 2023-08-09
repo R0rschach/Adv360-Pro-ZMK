@@ -27,7 +27,7 @@
         flavor = "balanced";
         bindings = <&kp>, <&kp>;
         hold-trigger-key-positions = <KEYS_RIGHT THUMBS>;
-    };
+      };
 
       hm_r: homerow_mods_right {
         compatible = "zmk,behavior-hold-tap";
@@ -38,18 +38,18 @@
         flavor = "balanced";
         bindings = <&kp>, <&kp>;
         hold-trigger-key-positions = <KEYS_LEFT THUMBS>;
-    };
+      };
     };
 
     // Home row mods
     #define _F_SFT &hm_l LSHFT F  // Shift on index fingers
-    #define _N_SFT &hm_r RSHFT J
-    #define _S_CMD &hm_l LGUI D   // Command on middle fingers
-    #define _E_CMD &hm_r RGUI K
-    #define _D_CTL &hm_l LALT S  // Control on index down
-    #define _H_CTL &hm_r RALT L
-    #define _R_OPT &hm_l LCTRL A   // Option on ring finger
-    #define _I_OPT &hm_r RCTRL :
+    #define _J_SFT &hm_r RSHFT J
+    #define _D_CMD &hm_l LGUI D   // Command on middle fingers
+    #define _K_CMD &hm_r RGUI K
+    #define _S_ALT &hm_l LALT S  // Control on index down
+    #define _L_ALT &hm_r RALT L
+    #define _A_CTL &hm_l LCTRL A   // Option on ring finger
+    #define _SEMI_CTL &hm_r RCTRL SEMI
 
   keymap {
     compatible = "zmk,keymap";
@@ -58,7 +58,7 @@
       bindings = <
         &kp EQUAL &kp N1    &kp N2   &kp N3   &kp N4     &kp N5 &tog 1                                                           &mo 3 &kp N6 &kp N7 &kp N8    &kp N9   &kp N0   &kp MINUS
         &kp TAB   &kp Q     &kp W    &kp E    &kp R      &kp T  &none                                                            &none &kp Y  &kp U  &kp I     &kp O    &kp P    &kp BSLH
-        &kp ESC   &kp A     &kp S    &kp D    &kp F      &kp G  &none           &kp LCTRL &kp LALT &kp LGUI  &kp RCTRL           &none &kp H  &kp J  &kp K     &kp L    &kp SEMI &kp SQT
+        &kp ESC   _A_CTL    _S_ALT   _D_CMD   _F_SFT     &kp G  &none           &kp LCTRL &kp LALT &kp LGUI  &kp RCTRL           &none &kp H _J_SFT _K_CMD    _L_ALT   _SEMI_CTL &kp SQT
         &kp LSHFT &kp Z     &kp X    &kp C    &kp V      &kp B                            &kp HOME &kp PG_UP                           &kp N  &kp M  &kp COMMA &kp DOT  &kp FSLH &kp RSHFT
         &mo 2     &kp GRAVE &kp CAPS &kp LEFT &kp RIGHT                &kp BSPC &kp DEL   &kp END  &kp PG_DN &kp ENTER &kp SPACE              &kp UP &kp DOWN  &kp LBKT &kp RBKT &mo 2
       >;
